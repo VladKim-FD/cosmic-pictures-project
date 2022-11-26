@@ -1,0 +1,62 @@
+@mixin font($fz: null, $lh: null, $c: null, $fw: null, $ff: null) {
+    font-size: $fz;
+    line-height: $lh;
+    color: $c;
+    font-weight: $fw;
+    font-family: $ff;
+}
+
+@mixin media($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    @include media(1400px){max-width: 1140px;}
+    @include media(1200px){max-width: 960px;}
+    @include media(992px){max-width: 720px;}
+    @include media(768){max-width: 540px;}
+    @include media(576px){max-width: 100%;}
+}
+
+.container{
+    @include container();
+}
+
+$roboto: ('Thin', 100), ('ExtraLight', 200), ('Light', 300), 
+('Regular', 400), ('Medium', 500), ('SemiBold', 600), 
+('Bold',700), ('ExtraBold', 800), ('Black', 900);
+$bebasNeue: ('Thin', 100), ('ExtraLight', 200), ('Light', 300), 
+('Regular', 400), ('Medium', 500), ('SemiBold', 600), 
+('Bold',700), ('ExtraBold', 800), ('Black', 900);
+
+@each $name, $weight in $roboto {
+    @font-face {
+        font-family: 'Montserrat';
+        src: url('src/assets/fonts/Roboto/Roboto-#{$name}.ttf') format('truetype');
+        font-weight: $weight;
+    }
+}
+@each $name, $weight in $bebasNeue {
+    @font-face {
+        font-family: 'bebas neue';
+        src: url('src/assets/fonts/bebasneue/BebasNeue #{$name}.ttf') format('truetype');
+        font-weight: $weight;
+    }
+}
+
+$icons: ('solid-900', 900), ('regular-400', 400);
+
+@each $name, $weight in $icons {
+    @font-face {
+        font-family: 'icons';
+        src: url('/src/assets/fonts/fotsawesome/fotsawesome/webfonts/fa-#{$name}.ttf') format('truetype');
+        font-weight: $weight;
+    }
+}
+

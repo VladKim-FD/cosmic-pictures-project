@@ -1,0 +1,134 @@
+@import '../common/common';
+@import '../common/root';
+
+.form-block{
+    background: $headerBg;
+    padding: 50px;
+    @include media(576px){
+        padding: 50px 30px;
+    }
+    @include media(480px){
+        padding: 30px 5px;
+    }
+
+}
+
+.form-content{
+    display: flex;
+    flex-direction: column;
+    text-align: center
+}
+
+.form-content input{
+    padding-bottom: 5px
+}
+
+.form-content input{
+    @include font(19px, 27px, $white, 400, 'Roboto');
+    // @include media(768px){
+    //     font-size: 15px;
+    // }
+}
+
+.form-content h3{
+    @include font(30px, 40px, $white, 700, 'Bebas Neue');
+    margin-bottom: 45px;
+    @include media(480px){
+        margin-bottom: 40px;
+    }
+}
+.form-content input{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-top: 5px;
+    border-bottom: 1px solid $white !important;
+}
+
+.form-content input::placeholder{
+    @include font(19px, 27px, $white, 400, 'Roboto');
+    // @include media(768px){
+    //     font-size: 15px;
+    // }
+    // @include media(480px){
+    //     font-size: 13px;
+    // }
+}
+
+
+
+.form-content input:hover{
+    cursor: pointer;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.user-info{
+    display: flex;
+    gap: 60px;
+    @include media(768px){
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    @include media(480px){
+        gap: 40px;
+    }
+}
+
+.user-info input{
+    width: 30%;
+    @include media(768px){
+        width: 42%;
+    }
+    @include media(576px){
+        width: 100%;
+    }
+}
+
+// .last-input{
+//     height: 80px;
+// }
+
+.last-input::placeholder{
+    @include media(576px){
+        // width: 80%;
+    }
+}
+
+button{
+    background: $greenHover;
+    width: max-content;
+    padding: 0 45px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    @include font(17px, 45px, $white, 400, 'Roboto' )
+}
+
+p{
+    letter-spacing: 0.02em;
+    @include font(13px, 20px, $white, 300, 'Roboto')
+}
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+input:focus::-moz-placeholder {
+   opacity: 0;
+}
+ 
+input:focus:-ms-input-placeholder {
+    opacity: 0;
+}
+ 
+input:focus:-moz-placeholder {
+   opacity: 0;
+}

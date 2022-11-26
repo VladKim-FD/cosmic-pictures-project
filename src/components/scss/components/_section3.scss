@@ -1,0 +1,256 @@
+@import '../common/common';
+@import '../common/root';
+
+
+.section3{
+    background: $headerBg;
+    padding: 50px 0;
+    border-top: 1px solid $white;
+}
+.section3-content{
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include media(992px){
+        flex-direction: column;
+    }
+}
+
+.section3-info{
+    display: flex;
+    flex-direction: column;
+    @include media(992px){
+        margin-bottom: 50px;
+        align-items: center;
+    }
+}
+
+.section3-info h3{
+    margin-bottom: 30px;
+    @include font(30px, 35px, $white, 700, 'Bebas Neue')
+}
+
+.section3-info p{
+    margin-bottom: 35px;
+    max-width: 390px;
+    width: 100%;
+    @include font(17px, 26px, $white, 300, 'Roboto')
+}
+
+.section3-info a{
+    background: $greenHover;
+    width: max-content;
+    padding: 0 70px;
+    border-radius: 25px;
+    @include font(17px, 45px, $white, 400, 'Roboto' )
+}
+
+.section3-stepper{
+    width: 50%;
+    @include media(1200px){
+        width: 55%;
+    }
+    @include media(992px){
+        width: 100%;
+    }
+}
+
+.stepper-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include media(768px){
+        padding: 0 35px;
+    }
+    @include media(576px){
+        padding: 0 20px;
+    }
+    @include media(480px){
+        padding: 0 10px;
+    }
+}
+
+.stepper-list li{
+    width: 100%;
+}
+
+.line{
+    position: absolute;
+    top: 50%;
+    left: 18%;
+    height: 2px;
+    width: 70% ;
+    background: $white;
+    transform: rotate(-90deg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media(768px){
+        left: 16%;
+    }
+    @include media(480px){
+        width: 90%;
+        left: 5%;
+    }
+    @include media(430px){
+        width: 100%;
+        left: 1%;
+    }
+    @include media(350px){
+        width: 110%;
+        left: -4%;
+    }
+}
+
+.circle{
+    width: 30px;
+   height: 30px;
+   border: 2px solid $white;
+   border-radius: 50%;
+   @include media(480px){
+    width: 20px;
+    height: 20px;
+   }
+   @include media(768px){
+    display: none;
+   }
+}
+
+.circle-active{
+    background: $white;
+}
+
+.step1, 
+.step3,
+.step5{
+  display: flex;
+  justify-content: end;   
+  position: relative; 
+  align-items: center;
+}
+
+.step2,
+.step4{
+    display: flex;
+    justify-content: start;
+    position: relative;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.step1 .circle{
+    margin-right: 45px;
+    @include media(992px){
+        margin-right: 70px;
+    }
+}
+.step3 .circle{
+    margin-right: 31px ;
+    @include media(992px){
+        margin-right: 56px;
+    }
+}
+.step5 .circle{
+    margin-right: 63px ;
+    @include media(992px){
+        margin-right: 87px;
+    }
+}
+.step2 .circle{
+    margin-left: 29px ;
+    @include media(1200px){
+        margin-left: 65px;
+    }
+    @include media(992px){
+        margin-left: 98px;
+    }
+}
+.step4 .circle{
+    margin-left: 57px ;
+    @include media(1200px){
+        margin-left: 94px;
+    }
+    @include media(992px){
+        margin-left: 128px;
+    }
+}
+
+.circle{
+    position: relative;
+}
+
+.circle:hover{
+    cursor: pointer;
+}
+
+.circle.active{
+    background: $white;
+}
+
+.circle::after{
+    position: absolute;
+    content: '';
+    left: 49%;
+    width: 3px;
+    height: 350%;
+    background: transparent;
+    @include media(992px){
+        height: 505%;
+    }
+}
+
+.circle.active::after{
+    background: $white;
+}
+
+.step1 .circle::after{
+    top: 50%;
+}
+.step5 .circle::after{
+    height: 60% !important;
+}
+
+.step{
+    background: $bgStep;
+    box-shadow: $bsStep;
+    border-radius: 15px;
+    padding: 20px 30px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    @include media(1200px){
+        padding: 20px 10px;
+    }
+    @include media(992px){
+        padding: 40px;
+    }
+    @include media(768px){
+        padding: 25px 35px;
+    }
+    @include media(576px){
+        padding: 15px;
+    }
+    @include media(480px){
+        padding: 10px ;
+    }
+}
+
+.step h4{
+    margin-left: 0;
+    @include font(20px, 27px, $greenHover, 400, 'Bebas Neue');
+    @include media(480px){
+        font-size: 18px;
+    }
+    margin-top: 0;
+}
+
+.step p{
+  @include font(19px, 25px, $white, 400, 'Roboto');
+  @include media(480px){
+    font-size: 17px;
+    max-width: 110px;
+    width: 100%;
+  }
+}
+
